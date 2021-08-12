@@ -1,0 +1,27 @@
+.footer{
+     margin-top: auto;
+     width: 100%;
+     background-color: #171717;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 0.8rem 0.5rem;
+     z-index: 50;
+   
+}
+
+.footer__info{
+    color: #f4f4f4;
+    text-align: center;
+}
+
+.footer__info > i {
+    margin-left: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
+
+.footer__info > i:hover{
+    opacity: 0.6;
+}

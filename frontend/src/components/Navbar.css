@@ -46,8 +46,8 @@
   }
   
   .cart__link:hover {
-    background: #dd219e;
-    color: #f4f4f4;
+    background: #f4f4f4;
+    color: black;
   }
   
   .cartlogo__badge {
@@ -63,7 +63,7 @@
     font-size: 1rem;
     font-weight: bold;
   }
-  
+
   .hamburger__menu {
     display: none;
     width: 30px;

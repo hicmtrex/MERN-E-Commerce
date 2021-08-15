@@ -1,20 +1,18 @@
 import "./CartScreen.css";
-
 import { useSelector, useDispatch } from "react-redux";
-
 // Components
 import CartItem from "../components/CartItem";
 
 // Actions
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
-import { Link } from "react-router-dom";
+import { useAuth } from "../store/auth-context";
+
 
 const CartScreen = () => {
   const dispatch = useDispatch();
-
+  const { currentUser } = useAuth();
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -62,9 +60,8 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button onClick={alert(`Total Price $${getCartSubTotal()}`)}>
-              <Link style={{color:"white", textDecoration:"none"}} to="/auth">  
-              Proceed To Checkout </Link></button>
+            <button onClick={() => alert(`${currentUser ? currentUser.email : getCartCount()}`)}>
+             Proceed To Checkout </button>
           </div>
         </div>
       </div>

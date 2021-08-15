@@ -3,8 +3,6 @@ import { useAuth } from "../../store/auth-context"
 import { Link, useHistory } from "react-router-dom"
 import classes from './AuthForm.module.css'
 
-
-
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -45,8 +43,8 @@ export default function Login() {
           <button disabled={loading}>Login</button>
         </div>
           </form>
-          <div >
-        Need an account? <Link to="/register">Sign Up</Link>
+          <div style={{marginTop:"30px"}}>
+        Need an account? <Link to="/register" style={{textDecoration:"none"}}>Sign Up</Link>
       </div>
     </section>
   )

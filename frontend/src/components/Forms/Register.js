@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../../store/auth-context"
-import { Link, useHistory } from "react-router-dom"
+import {  useHistory } from "react-router-dom"
 import classes from './AuthForm.module.css'
 
 export default function Register() {
@@ -34,6 +34,7 @@ export default function Register() {
   return (
     <section className={classes.auth}>
       <h1>Sign Up</h1>
+      {error && alert(error)}
       <form onSubmit={handleSubmit}>
         <div className={classes.control}>
           <label htmlFor='email'>Your Email</label>
@@ -48,7 +49,7 @@ export default function Register() {
           <input type='password' id='password' required ref={passwordConfirmRef} />
         </div>
         <div className={classes.actions}>
-          <button>Sing Up</button>
+          <button disabled={loading}>Sing Up</button>
         </div>
       </form>
     </section>

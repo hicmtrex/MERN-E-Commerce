@@ -40,19 +40,20 @@ const SideDrawer = ({ show,click }) => {
                             Cart <span className="sidedrawer__cart">
                                 {getCartCount()}</span>
                         </span>
-                    </Link>
+            </Link>
+            {error && alert(error)}
                     </li>
                     <li>
                         <a href="/">Shop</a>
                 </li>
                 <li>  
          {!currentUser ? <Link to="/login">Login</Link> : 
-       <Link >{currentUser.email}</Link>  }
+       <Link to="#">{currentUser.email}</Link>  }
         </li>
 
         <li>  
           {!currentUser ? <Link to="/register">Singup</Link> :
-            <Link onClick={handleLogout}>Logout</Link>
+            <Link to="#" onClick={handleLogout}>Logout</Link>
          }
         </li>
               

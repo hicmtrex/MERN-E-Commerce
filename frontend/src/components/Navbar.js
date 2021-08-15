@@ -36,12 +36,12 @@ const Navbar = ({ click }) => {
       <ul className="navbar__links">
       <li>  
          {!currentUser ? <Link to="/login">Login</Link> : 
-       <Link>{currentUser.email}</Link>  }
+       <Link to="#">{currentUser.email}</Link>  }
         </li>
 
         <li>  
           {!currentUser ? <Link to="/register">Singup</Link> :
-            <Link onClick={handleLogout}>Logout</Link>
+            <Link to="#" onClick={handleLogout}>Logout</Link>
          }
         </li>
         <li>

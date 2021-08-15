@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../store/auth-context";
 import './SideDrawer.css'
 
 const SideDrawer = ({ show,click }) => {
@@ -7,11 +9,24 @@ const SideDrawer = ({ show,click }) => {
     if (show) {
         sideFrawerClass.push('show');
     }
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth();
+    const history = useHistory()
     const cart = useSelector(state => state.cart)
     const { cartItems } = cart;
 
     const getCartCount = () => {
         return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  }
+  async function handleLogout() {
+    setError("")
+
+    try {
+      await logout()
+      history.push("/login")
+    } catch {
+      setError("Failed to log out")
+    }
   }
 
 
@@ -28,8 +43,18 @@ const SideDrawer = ({ show,click }) => {
                     </Link>
                     </li>
                     <li>
-                        <Link to="/">Shop</Link>
-                    </li>
+                        <a href="/">Shop</a>
+                </li>
+                <li>  
+         {!currentUser ? <Link to="/login">Login</Link> : 
+       <Link >{currentUser.email}</Link>  }
+        </li>
+
+        <li>  
+          {!currentUser ? <Link to="/register">Singup</Link> :
+            <Link onClick={handleLogout}>Logout</Link>
+         }
+        </li>
               
 
             </ul>

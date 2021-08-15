@@ -7,6 +7,7 @@ import CartItem from "../components/CartItem";
 
 // Actions
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
+import { Link } from "react-router-dom";
 
 const CartScreen = () => {
   const dispatch = useDispatch();
@@ -61,7 +62,9 @@ const CartScreen = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button onClick={() => alert(`$ ${getCartSubTotal()}`)}>Proceed To Checkout</button>
+            <button onClick={alert(`Total Price $${getCartSubTotal()}`)}>
+              <Link style={{color:"white", textDecoration:"none"}} to="/auth">  
+              Proceed To Checkout </Link></button>
           </div>
         </div>
       </div>

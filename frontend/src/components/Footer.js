@@ -4,8 +4,8 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__info"> Mern Shooping 2021 &copy;
-                <i class="fab fa-github-square"></i>
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-github-square"></i>
+                <i className="fab fa-linkedin"></i>
             </div>
         </footer>
     );

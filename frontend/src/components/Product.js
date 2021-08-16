@@ -2,7 +2,8 @@
 import "./Product.css";
 import { Link } from "react-router-dom";
 
-const Product = ({ imageUrl, description, price, name, productId }) => {
+const Product = (props) => {
+  const { imageUrl, description, price, name, productId } = props;
   return (
     <div className="product">
       <img src={imageUrl} alt={name} />

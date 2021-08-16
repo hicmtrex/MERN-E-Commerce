@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../../store/auth-context"
 import { Link, useHistory } from "react-router-dom"
-import classes from './AuthForm.module.css'
+import './AuthForm.css'
 
 export default function Login() {
   const emailRef = useRef()
@@ -27,24 +27,26 @@ export default function Login() {
   }
 
   return (
-    <section className={classes.auth}>
-          <h1>Login</h1>
+    <section className="auth">
+          <h1>SIGN IN</h1>
           {error && alert(error)}
       <form onSubmit={handleSubmit}>
-        <div className={classes.control}>
-          <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required ref={emailRef}/>
+        <div className="control">
+          <label htmlFor='email'>Email Adress</label>
+          <input type='email' id='email' required ref={emailRef}
+          placeholder="enter email"/>
         </div>
-        <div className={classes.control}>
-          <label htmlFor='password'>Your Password</label>
-          <input type='password' id='password' required ref={passwordRef} />
+        <div className='control'>
+          <label htmlFor='password'>Password</label>
+          <input type='password' id='password' required ref={passwordRef}
+          placeholder="enter password" />
               </div>
-        <div className={classes.actions}>
-          <button disabled={loading}>Login</button>
+        <div className='actions'>
+          <button disabled={loading}>Sign In</button>
         </div>
           </form>
           <div style={{marginTop:"30px"}}>
-        Need an account? <Link to="/register" style={{textDecoration:"none"}}>Sign Up</Link>
+          New Customare? <Link to="/register" style={{textDecoration:"none"}}>Sign Up</Link>
       </div>
     </section>
   )

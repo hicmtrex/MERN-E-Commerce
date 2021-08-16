@@ -106,6 +106,43 @@ const products = [
       "ANBEGE Gaming Chair Ergonomic Racing Style Game Chair Height Adjustable High Back with Massage Headrest and Lumbar Pillow Computer Chair (Blue).",
     price: 119.99,
     countInStock: 15,
+  },
+  {
+    name: "Infinix Zero 8",
+    imageUrl:
+      "https://tunisiatech.tn/5279-medium_default/infinix-zero-8-silver-diamond-prix-tunisie.jpg",
+    description:
+      "Infinix Zero 8 smartphone was launched on 27th August 2020. The phone comes with a 6.85-inch touchscreen display. Infinix Zero 8 is powered by an octa-core MediaTek Helio G90T processor. It comes with 8GB of RAM.",
+    price: 319.99,
+    countInStock: 15,
+  },
+
+  {
+    name: "GTX 1660 Super",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/71M4pG5B6zS._AC_SL1500_.jpg",
+    description:
+      " MSI Gaming GeForce GTX 1660 Super 192-bit HDMI/DP 6GB GDRR6 HDCP Support DirectX 12 Dual Fan VR Ready OC Graphics Card (GTX 1660 Super Gaming X)",
+    price: 649.99,
+    countInStock: 10,
+  },
+  {
+    name: "RTX 3080 Ti",
+    imageUrl:
+      "https://tunewtec.com/wp-content/uploads/2021/06/msi-3080ti.jpg",
+    description:
+      " GeForce RTX 3080 Ti FTW3 Ultra Gaming, 12G-P5-3967-KR, 12GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate",
+    price: 1199.99,
+    countInStock: 15,
+  },
+  {
+    name: "GTX 1080 Ti",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/81IdRzJZHeL._AC_SL1500_.jpg",
+    description:
+      " ASUS ROG STRIX GeForce GTX 1080 TI 11GB VR Ready 5K HD Gaming Graphics Card (ROG-STRIX-GTX1080TI-11G-GAMING)",
+    price: 849.99,
+    countInStock: 15,
 },
     
   ];

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "../../store/auth-context"
-import {  useHistory } from "react-router-dom"
-import classes from './AuthForm.module.css'
+import {  Link, useHistory } from "react-router-dom"
+import './AuthForm.css'
 
 export default function Register() {
   const emailRef = useRef()
@@ -32,26 +32,32 @@ export default function Register() {
   }
 
   return (
-    <section className={classes.auth}>
-      <h1>Sign Up</h1>
+    <section className='auth'>
+      <h1>SIGN UP</h1>
       {error && alert(error)}
       <form onSubmit={handleSubmit}>
-        <div className={classes.control}>
-          <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required ref={emailRef}/>
+        <div className='control'>
+          <label htmlFor='email'>Email Adress</label>
+          <input type='email' id='email' required ref={emailRef}
+          placeholder="enter email"/>
         </div>
-        <div className={classes.control}>
-          <label htmlFor='password'>Your Password</label>
-          <input type='password' id='password' required ref={passwordRef} />
+        <div className='control'>
+          <label htmlFor='password'>Password</label>
+          <input type='password' id='password' required ref={passwordRef}
+          placeholder="enter password" />
               </div>
-              <div className={classes.control}>
-          <label htmlFor='password'>Your Password</label>
-          <input type='password' id='password' required ref={passwordConfirmRef} />
+              <div className='control'>
+          <label htmlFor='password'>Confirm Password</label>
+          <input type='password' id='password' required ref={passwordConfirmRef}
+          placeholder="confirm password" />
         </div>
-        <div className={classes.actions}>
+        <div className='actions'>
           <button disabled={loading}>Sing Up</button>
         </div>
       </form>
+      <div style={{marginTop:"30px"}}>
+          have an account? <Link to="/login" style={{textDecoration:"none"}}>Sign In</Link>
+      </div>
     </section>
   );
 };
